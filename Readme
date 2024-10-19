@@ -1,0 +1,32 @@
+# Análisis de Sentimientos en Tuits
+
+Este proyecto utiliza técnicas de machine learning para analizar el sentimiento expresado en tuits. El objetivo es clasificar los tuits en dos categorías: positivo y negativo, basándose en el contenido del texto.
+
+## Pasos del análisis
+
+1. Preprocesamiento de datos: Los tuits son limpiados y preprocesados para eliminar ruido y convertir las palabras a su forma base (lematización).
+
+2. Vectorización: Los tuits preprocesados son convertidos en vectores numéricos utilizando la técnica TF-IDF.
+
+3. Entrenamiento de modelos: Se entrenan varios modelos de clasificación, incluyendo Bernoulli Naive Bayes, Árbol de Decisión, Bosque Aleatorio y Regresión Logística. Se utiliza GridSearchCV para ajustar los hiperparámetros de cada modelo.
+
+4. Evaluación de modelos: Los modelos son evaluados utilizando métricas como precisión (accuracy), AUC-ROC, log loss, informe de clasificación y matriz de confusión.
+
+5. Serialización de modelos: Los dos mejores modelos, según la métrica de precisión, son serializados para su uso futuro.
+
+## Resultados
+
+Los modelos muestran un rendimiento razonable en la clasificación de tuits en categorías de sentimiento positivo y negativo. El modelo Bosque Aleatorio sin validación cruzada obtuvo la mejor precisión (70.63%) y un buen equilibrio entre las métricas de rendimiento. 
+
+Se observa que algunos modelos tienen dificultades para clasificar correctamente los casos negativos, lo que sugiere un posible sesgo en el conjunto de datos o la necesidad de ajustar aún más los hiperparámetros.
+
+## Conclusiones
+
+Este proyecto demuestra la capacidad de aplicar técnicas de machine learning para analizar sentimientos en tuits. Aunque los resultados son prometedores, hay espacio para mejorar el rendimiento de los modelos experimentando con diferentes técnicas de preprocesamiento, modelos adicionales y ajuste de hiperparámetros.
+
+## Siguientes pasos
+
+- Explorar técnicas de preprocesamiento adicionales, como stemming o eliminación de números.
+- Probar otros modelos, como Gradient Boosting o XGBoost.
+- Utilizar la validación cruzada estratificada para una evaluación más robusta de los modelos.
+- Crear visualizaciones adicionales, como curvas ROC o curvas de precisión-recall, para obtener más información sobre el rendimiento de los modelos.
